@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${perros != null and !perros.empty}">
+    <table border="1">
+        <tr>
+            <th>Id mascota</th>
+            <th>nombre mascota</th>
+            <th>raza</th>
+            <th>nombre Dueño</th>
+        </tr>
+        <tr th:each="perro : ${perros}">
+            <td th:text="${perro.idPerro}">nombre</td>
+            <td th:text="${perro.nombre}">nombrePerro</td>
+            <td th:text="${perro.raza}">raza</td>
+            <td th:text="${perro.nombreDueno}">nombreDueno</td>
+        </tr>
+    </table>
+</div>
+<div th:if="${perros == null or perros.empty}">
+    La lista perros esta vacia
+</div>
+</body>
+</html>
